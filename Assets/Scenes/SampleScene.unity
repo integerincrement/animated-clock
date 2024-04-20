@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 694399234}
   - component: {fileID: 694399233}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 842026155}
   - component: {fileID: 842026154}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -986,8 +986,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1012,7 +1012,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 42, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1870,6 +1870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2002526743}
+  - component: {fileID: 2002526744}
   m_Layer: 0
   m_Name: clock
   m_TagString: Untagged
@@ -1886,7 +1887,7 @@ Transform:
   m_GameObject: {fileID: 2002526742}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 42.5, z: 0}
+  m_LocalPosition: {x: 0, y: 42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1908,6 +1909,21 @@ Transform:
   - {fileID: 1886590655}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2002526744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002526742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631dfca7564a7854bbd5861776021b8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoursPivot: {fileID: 1220838238}
+  minutesPivot: {fileID: 1391891473}
+  secondsPivot: {fileID: 1886590655}
 --- !u!1 &2101970851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,6 +2013,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 963194228}
   - {fileID: 705507995}
-  - {fileID: 2002526743}
   - {fileID: 694399236}
   - {fileID: 842026157}
+  - {fileID: 2002526743}
