@@ -1,7 +1,8 @@
 using System;
 using UnityEngine;
 
-public class Clock : UnityEngine.MonoBehaviour  {
+public class Clock : UnityEngine.MonoBehaviour
+{
 
     // one hour on a clock is 30 degrees of rotation
     const float hoursToDegrees = -30f;
@@ -9,15 +10,16 @@ public class Clock : UnityEngine.MonoBehaviour  {
     const float secondsToDegrees = -6f;
 
     [SerializeField]
-    Transform hoursPivot , minutesPivot, secondsPivot;
+    Transform hoursPivot, minutesPivot, secondsPivot;
 
-    private void Update()    {
-        DateTime time = DateTime.Now;
+    private void Update()
+    {
+        TimeSpan time = DateTime.Now.TimeOfDay;
 
-        hoursPivot.localRotation = Quaternion.Euler(0f, 0f, hoursToDegrees * time.Hour);
+        hoursPivot.localRotation = Quaternion.Euler(0f, 0f, hoursToDegrees * (float)time.TotalHours);
 
-        minutesPivot.localRotation = Quaternion.Euler(0f, 0f, minutesToDegrees * time.Minute);
+        minutesPivot.localRotation = Quaternion.Euler(0f, 0f, minutesToDegrees * (float)time.TotalMinutes);
 
-        secondsPivot.localRotation = Quaternion.Euler(0f, 0f, secondsToDegrees * time.Second);
+        secondsPivot.localRotation = Quaternion.Euler(0f, 0f, secondsToDegrees * (float)time.TotalSeconds);
     }
 }
